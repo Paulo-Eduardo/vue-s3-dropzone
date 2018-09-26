@@ -54,6 +54,7 @@ export default {
       accept (file, done) {
         lambda.getSignedURL(file)
           .then((url) => {
+            debugger
             file.uploadURL = url
             done()
             // Manually process each file

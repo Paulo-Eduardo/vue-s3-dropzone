@@ -8,7 +8,11 @@ export default {
       filePath: file.name,
       contentType: file.type
     }
-    return axios.post(endpoint, payload)
+    return axios.post(endpoint, payload, {
+      headers: {
+        'x-api-key': 'jxHqjs4qMXaQlbWdwgcjP8DCLuIiIJ2zE5Ba3Imj'
+      }
+    })
       .then((res) => {
         return Promise.resolve(res.data.url || '/')
       })
